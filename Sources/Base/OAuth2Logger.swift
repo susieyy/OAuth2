@@ -70,13 +70,13 @@ public protocol OAuth2Logger {
 	var level: OAuth2LogLevel { get }
 	
 	/** Log a message at the trace level. */
-	func trace(_ module: String?, filename: String?, line: Int?, function: String?, msg: @autoclosure() -> String)
+	func trace(_ module: String?, filename: String? = #file, line: Int?, function: String?, msg: @autoclosure() -> String)
 	
 	/** Standard debug logging. */
-	func debug(_ module: String?, filename: String?, line: Int?, function: String?, msg: @autoclosure() -> String)
+	func debug(_ module: String?, filename: String? = #file, line: Int?, function: String?, msg: @autoclosure() -> String)
 	
 	/** Log warning messages. */
-	func warn(_ module: String?, filename: String?, line: Int?, function: String?, msg: @autoclosure() -> String)
+	func warn(_ module: String?, filename: String? = #file, line: Int?, function: String?, msg: @autoclosure() -> String)
 }
 
 extension OAuth2Logger {
